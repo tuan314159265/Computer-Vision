@@ -1,0 +1,27 @@
+# Kết quả sinh ra khi chạy
+outputs/
+demo_images_NOT_FOR_SUBMISSION/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# (Tuỳ chọn) bỏ ảnh thật khỏi repo nếu muốn giữ riêng:
+# data/
+
+# Notebook gốc — đã tách code sang package .py nên không đưa lên repo
+CO3057_BTL2_Gradient_Panorama.ipynb
+
+# Dữ liệu ảnh (test tải về + tự thu thập) — không đưa lên repo
+data/test_assets/
+data/pano_set2/
