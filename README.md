@@ -47,7 +47,7 @@ data/
 │   ├── budapest1.jpg
 │   ├── budapest2.jpg
 │   └── ...
-└── test_assets/                 # dữ liệu tham khảo/kiểm thử cục bộ
+└── test_assets/                 # dữ liệu tham khảo thêm; không đưa lên Git
     ├── boat1.jpg ...
     ├── budapest1.jpg ...
     └── gradient/
@@ -59,9 +59,9 @@ Loader tìm dữ liệu theo thứ tự:
 - `pano_set1`: `data/pano_set1/`, sau đó ảnh `boat*.jpg` trong `data/test_assets/`.
 - `pano_set2`: `data/pano_set2/`, sau đó ảnh `budapest*.jpg` trong `data/test_assets/`.
 
-Hiện workspace có 6 ảnh boat và 6 ảnh Budapest trong `data/test_assets/`; thư mục `data/pano_set2/` cũng có 6 ảnh `01.jpg`–`06.jpg`. Thư mục `gradient-20261016T073240Z-1-001/` bạn chỉ ra đang rỗng, nên chưa có file `gadinest` nào để sắp vào bộ dữ liệu. Nếu `gadinest` là ảnh/bộ ảnh bổ sung, hãy đặt đúng file vào `data/pano_set2/` và bảo đảm nó thuộc chuỗi panorama Budapest; không nên trộn một ảnh đơn không liên quan vào chuỗi ảnh.
+Repo bao gồm sáu ảnh boat trong `data/pano_set1/`, sáu ảnh Budapest trong `data/pano_set2/`, cùng cặp ảnh gradient. Thư mục `gradient-20261016T073240Z-1-001/` bạn chỉ ra đang rỗng, nên chưa có file `gadinest` nào để thêm. Nếu đó là ảnh/bộ ảnh bổ sung, hãy đặt ảnh vào đúng chuỗi trong `data/pano_set2/`.
 
-`data/test_assets/` và `data/pano_set2/` đang bị loại khỏi Git bằng `.gitignore` để tránh đẩy ảnh dữ liệu lớn lên repo. Các thư mục cần thiết có hướng dẫn trong `data/README.md`; hãy tự cung cấp ảnh khi clone repo.
+Chỉ `data/test_assets/` bị loại khỏi Git; hai bộ ảnh và cặp gradient dùng trong bài được theo dõi trong repo để có thể chạy ngay sau khi clone.
 
 ## Kết quả
 
@@ -73,7 +73,7 @@ Chạy xong, kết quả được lưu trong `outputs/`:
 - `part2_pair_details.csv` — số liệu theo từng cặp ảnh.
 - `pano_<set>_<method>.jpg` — panorama, ví dụ `pano_pano_set1_sift.jpg`.
 
-Thư mục `outputs/` bị bỏ qua trong Git và được tạo tự động.
+Các kết quả chính trong `outputs/` được lưu trong repo; kết quả phụ và ảnh DEMO vẫn bị `.gitignore` loại trừ.
 
 ## Cấu trúc mã nguồn
 
@@ -94,4 +94,4 @@ Notebook `CO3057_BTL2_Gradient_Panorama.ipynb` giữ phiên bản tự chứa đ
 
 ## Git
 
-Repo hiện tại là Git local trên nhánh `master`. Chưa có remote được cấu hình, nên chưa thể `push` lên GitHub/GitLab. Dữ liệu ảnh và notebook đang bị ignore; các file mã nguồn và README có thể được commit sau khi thêm remote phù hợp.
+Repo công khai: [github.com/tuan314159265/Computer-Vision](https://github.com/tuan314159265/Computer-Vision). Mã nguồn, dữ liệu đầu vào dùng trong bài và các kết quả chính đều được push lên nhánh `master`. Notebook Colab và thư mục `data/test_assets/` vẫn bị ignore.

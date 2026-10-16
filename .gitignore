@@ -1,5 +1,14 @@
-# Kết quả sinh ra khi chạy
-outputs/
+# Kết quả sinh ra khi chạy (chỉ đưa các kết quả chính vào Git)
+outputs/*
+!outputs/part1_comparison.png
+!outputs/part1_gradient_metrics.csv
+!outputs/part2_experiment_summary.csv
+!outputs/part2_pair_details.csv
+!outputs/pano_pano_set1_sift.jpg
+!outputs/pano_pano_set1_orb.jpg
+!outputs/pano_pano_set2_sift.jpg
+!outputs/pano_pano_set2_orb.jpg
+outputs/test_assets/
 demo_images_NOT_FOR_SUBMISSION/
 
 # Python
@@ -16,12 +25,11 @@ Thumbs.db
 .idea/
 .vscode/
 
-# (Tuỳ chọn) bỏ ảnh thật khỏi repo nếu muốn giữ riêng:
-# data/
+# Dữ liệu tham khảo bổ sung tải từ bên ngoài không đưa lên repo.
+# Các bộ ảnh dùng trực tiếp trong bài (gradient, pano_set1, pano_set2) được theo dõi.
 
 # Notebook gốc — đã tách code sang package .py nên không đưa lên repo
 CO3057_BTL2_Gradient_Panorama.ipynb
 
-# Dữ liệu ảnh (test tải về + tự thu thập) — không đưa lên repo
+# Dữ liệu test_assets giữ riêng, không đưa lên repo.
 data/test_assets/
-data/pano_set2/

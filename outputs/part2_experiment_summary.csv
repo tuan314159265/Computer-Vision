@@ -1,0 +1,5 @@
+set,method,status,n_images,total_matches,total_inliers,avg_inlier_ratio,avg_reproj_error,avg_photo_error,time_s
+pano_set1,SIFT,SUCCESS,6,2558,2195,0.862,0.401,5.876,4.858
+pano_set1,ORB,SUCCESS,6,3412,2859,0.853,1.091,6.74,8.206
+pano_set2,SIFT,SUCCESS,6,2347,1826,0.721,0.895,18.616,2.043
+pano_set2,ORB,SUCCESS,6,1406,1160,0.729,0.921,21.563,0.445

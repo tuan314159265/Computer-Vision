@@ -1,0 +1,5 @@
+phương pháp,seam_discontinuity,seam_edge_energy,object_color_shift
+Ghép trực tiếp (baseline),107.069,351.783,0.0
+Poisson (gradient nguồn),2.941,75.726,44.185
+Poisson (mixing gradients),2.976,78.566,44.396
+cv2.seamlessClone,0.382,41.541,34.603

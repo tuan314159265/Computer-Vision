@@ -22,6 +22,6 @@ data/
     └── gradient/
 ```
 
-Mỗi panorama set cần ít nhất hai ảnh. Nếu `pano_set1/` hoặc `pano_set2/` chưa có đủ ảnh, chương trình thử dùng lần lượt `boat*.jpg` hoặc `budapest*.jpg` trong `test_assets/`. Nếu vẫn không có ảnh phù hợp, chương trình sinh ảnh DEMO để kiểm tra kỹ thuật.
+Hai bộ ảnh boat và Budapest hiện đã có sẵn trong repo. Mỗi panorama set cần ít nhất hai ảnh. Nếu sau này thay hoặc xoá ảnh trong `pano_set1/` hay `pano_set2/`, chương trình thử dùng lần lượt `boat*.jpg` hoặc `budapest*.jpg` trong `test_assets/`; nếu không có đủ ảnh, chương trình sinh ảnh DEMO để kiểm tra kỹ thuật.
 
-Ảnh trong `test_assets/` và `pano_set2/` hiện bị `.gitignore` loại khỏi Git để tránh đẩy dữ liệu ảnh lên remote. Khi clone repo, tự chép/cung cấp dữ liệu vào đúng vị trí.
+Các ảnh bài làm trong `gradient/`, `pano_set1/` và `pano_set2/` được theo dõi trong Git. `test_assets/` chỉ là dữ liệu tham khảo bổ sung và bị `.gitignore` loại khỏi repo.
