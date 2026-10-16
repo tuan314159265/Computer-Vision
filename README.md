@@ -59,7 +59,7 @@ Loader tìm dữ liệu theo thứ tự:
 - `pano_set1`: `data/pano_set1/`, sau đó ảnh `boat*.jpg` trong `data/test_assets/`.
 - `pano_set2`: `data/pano_set2/`, sau đó ảnh `budapest*.jpg` trong `data/test_assets/`.
 
-Hiện workspace có 4 ảnh boat và 6 ảnh Budapest trong `data/test_assets/`; thư mục `data/pano_set2/` cũng có 6 ảnh `01.jpg`–`06.jpg`. Không tìm thấy file có tên `gadinest` trong dữ liệu hiện có. Nếu đó là ảnh/bộ ảnh bổ sung, hãy đặt file vào `data/pano_set2/` và bảo đảm nó thuộc đúng chuỗi ảnh panorama; không nên trộn một ảnh đơn không liên quan vào chuỗi Budapest.
+Hiện workspace có 6 ảnh boat và 6 ảnh Budapest trong `data/test_assets/`; thư mục `data/pano_set2/` cũng có 6 ảnh `01.jpg`–`06.jpg`. Thư mục `gradient-20261016T073240Z-1-001/` bạn chỉ ra đang rỗng, nên chưa có file `gadinest` nào để sắp vào bộ dữ liệu. Nếu `gadinest` là ảnh/bộ ảnh bổ sung, hãy đặt đúng file vào `data/pano_set2/` và bảo đảm nó thuộc chuỗi panorama Budapest; không nên trộn một ảnh đơn không liên quan vào chuỗi ảnh.
 
 `data/test_assets/` và `data/pano_set2/` đang bị loại khỏi Git bằng `.gitignore` để tránh đẩy ảnh dữ liệu lớn lên repo. Các thư mục cần thiết có hướng dẫn trong `data/README.md`; hãy tự cung cấp ảnh khi clone repo.
 

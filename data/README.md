@@ -17,7 +17,7 @@ data/
 │   ├── 02.jpg
 │   └── ...
 └── test_assets/              # ảnh kiểm thử cục bộ; không commit lên Git
-    ├── boat1.jpg ... boat4.jpg
+    ├── boat1.jpg ... boat6.jpg
     ├── budapest1.jpg ... budapest6.jpg
     └── gradient/
 ```
