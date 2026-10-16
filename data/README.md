@@ -1,21 +1,27 @@
-# Thư mục dữ liệu
+# Dữ liệu đầu vào
 
-Đặt ảnh vào đây theo cấu trúc sau (thứ tự tên file = thứ tự trái → phải):
+Đặt ảnh theo cấu trúc dưới đây. Tên file được sắp xếp theo thứ tự từ trái sang phải.
 
-```
+```text
 data/
 ├── gradient/
 │   ├── background.jpg
 │   ├── source.jpg
-│   └── mask.png            # tuỳ chọn
-├── pano_set1/
+│   └── mask.png              # tuỳ chọn; thiếu thì chương trình dùng GrabCut
+├── pano_set1/                # ảnh boat
 │   ├── 01.jpg
 │   ├── 02.jpg
-│   └── 03.jpg
-└── pano_set2/
-    ├── 01.jpg
-    ├── 02.jpg
-    └── 03.jpg
+│   └── ...
+├── pano_set2/                # ảnh Budapest
+│   ├── 01.jpg
+│   ├── 02.jpg
+│   └── ...
+└── test_assets/              # ảnh kiểm thử cục bộ; không commit lên Git
+    ├── boat1.jpg ... boat4.jpg
+    ├── budapest1.jpg ... budapest6.jpg
+    └── gradient/
 ```
 
-Nếu thiếu ảnh, notebook tự sinh ảnh DEMO để kiểm tra kỹ thuật.
+Mỗi panorama set cần ít nhất hai ảnh. Nếu `pano_set1/` hoặc `pano_set2/` chưa có đủ ảnh, chương trình thử dùng lần lượt `boat*.jpg` hoặc `budapest*.jpg` trong `test_assets/`. Nếu vẫn không có ảnh phù hợp, chương trình sinh ảnh DEMO để kiểm tra kỹ thuật.
+
+Ảnh trong `test_assets/` và `pano_set2/` hiện bị `.gitignore` loại khỏi Git để tránh đẩy dữ liệu ảnh lên remote. Khi clone repo, tự chép/cung cấp dữ liệu vào đúng vị trí.

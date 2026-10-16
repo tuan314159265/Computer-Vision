@@ -1,6 +1,8 @@
-"""Code CO3057 BTL2 tách từ notebook thành package Python.
+"""Computer Vision assignment package.
 
-- lib.gradient_domain : Gradient Domain Editing (Poisson blending).
-- lib.panorama       : Pipeline ghép ảnh toàn cảnh (SIFT/ORB).
-- lib.utils          : Tiện ích vẽ/sinh ảnh DEMO.
+- ``lib.gradient_domain``: Poisson blending and gradient-domain metrics.
+- ``lib.panorama``: SIFT/ORB panorama stitching algorithms.
+- ``lib.data``: project input discovery and loading.
+- ``lib.experiments``: run both assignment experiments and save results.
+- ``lib.utils``: plotting and DEMO image helpers.
 """
