@@ -1,15 +1,5 @@
 # Kết quả sinh ra khi chạy (chỉ đưa các kết quả chính vào Git)
-outputs/*
-!outputs/part1_comparison.png
-!outputs/part1_gradient_metrics.csv
-!outputs/part2_experiment_summary.csv
-!outputs/part2_pair_details.csv
-!outputs/pano_pano_set1_sift.jpg
-!outputs/pano_pano_set1_orb.jpg
-!outputs/pano_pano_set2_sift.jpg
-!outputs/pano_pano_set2_orb.jpg
-outputs/test_assets/
-demo_images_NOT_FOR_SUBMISSION/
+
 
 # Python
 __pycache__/

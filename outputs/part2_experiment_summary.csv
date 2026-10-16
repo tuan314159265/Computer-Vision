@@ -1,5 +1,5 @@
-set,method,status,n_images,total_matches,total_inliers,avg_inlier_ratio,avg_reproj_error,avg_photo_error,time_s
-pano_set1,SIFT,SUCCESS,6,2558,2195,0.862,0.401,5.876,4.858
-pano_set1,ORB,SUCCESS,6,3412,2859,0.853,1.091,6.74,8.206
-pano_set2,SIFT,SUCCESS,6,2347,1826,0.721,0.895,18.616,2.043
-pano_set2,ORB,SUCCESS,6,1406,1160,0.729,0.921,21.563,0.445
+set,method,status,backend,fallback_reason,image_order,n_images,total_matches,total_inliers,avg_inlier_ratio,avg_reproj_error,avg_photo_error,time_s
+pano_set1,SIFT,SUCCESS,feature_pipeline,,1-2-3-4-5-6,6,2558,2195,0.862,0.401,5.876,7.143
+pano_set1,ORB,SUCCESS,feature_pipeline,,1-2-3-4-5-6,6,3412,2859,0.853,1.091,6.74,12.966
+pano_set2,SIFT,SUCCESS,opencv_scans_reordered,Reordered by reliable pairwise overlap; planar scan blending,6-3-2-5-4-1,6,3406,3003,0.89,0.782,,2.34
+pano_set2,ORB,SUCCESS,opencv_scans_reordered,Reordered by reliable pairwise overlap; planar scan blending,2-3-6-5-4-1,6,1881,1650,0.878,1.065,,1.607

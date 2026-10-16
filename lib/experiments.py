@@ -98,11 +98,21 @@ def run_part2(panorama_sets, output_dir, blend_mode='feather'):
             experiment_results[(set_name, method)] = (panorama, summary)
             pair_metrics = summary.get('pair_metrics', []) if summary else []
             status = summary.get('status', 'FAIL') if summary else 'FAIL'
+            photo_errors = [
+                pair.get('photo_error', float('nan'))
+                for pair in pair_metrics
+                if np.isfinite(pair.get('photo_error', float('nan')))
+            ]
 
             summary_rows.append({
                 'set': set_name,
                 'method': method,
                 'status': status,
+                'backend': summary.get('backend', 'unknown') if summary else 'unknown',
+                'fallback_reason': summary.get('fallback_reason', '') if summary else '',
+                'image_order': '-'.join(
+                    str(index) for index in (summary.get('image_order') or range(1, len(images) + 1))
+                ) if summary else '',
                 'n_images': len(images),
                 'total_matches': sum(pair['matches'] for pair in pair_metrics),
                 'total_inliers': sum(pair['inliers'] for pair in pair_metrics),
@@ -110,9 +120,8 @@ def run_part2(panorama_sets, output_dir, blend_mode='feather'):
                 if pair_metrics else float('nan'),
                 'avg_reproj_error': round(float(np.nanmean([p['reproj_error'] for p in pair_metrics])), 3)
                 if pair_metrics else float('nan'),
-                'avg_photo_error': round(
-                    float(np.nanmean([p.get('photo_error', float('nan')) for p in pair_metrics])), 3
-                ) if pair_metrics else float('nan'),
+                'avg_photo_error': round(float(np.mean(photo_errors)), 3)
+                if photo_errors else float('nan'),
                 'time_s': summary.get('time', float('nan')) if summary else float('nan'),
             })
 
@@ -122,6 +131,9 @@ def run_part2(panorama_sets, output_dir, blend_mode='feather'):
             for pair in pair_metrics:
                 detail = dict(pair)
                 detail.setdefault('photo_error', float('nan'))
+                detail['image_order'] = '-'.join(
+                    str(index) for index in (summary.get('image_order') or range(1, len(images) + 1))
+                ) if summary else ''
                 detail['set'] = set_name
                 detail['method'] = method
                 pair_detail_rows.append(detail)
@@ -131,7 +143,7 @@ def run_part2(panorama_sets, output_dir, blend_mode='feather'):
     if pair_detail_rows:
         columns = [
             'set', 'method', 'pair', 'matches', 'inliers',
-            'inlier_ratio', 'reproj_error', 'photo_error',
+            'inlier_ratio', 'reproj_error', 'photo_error', 'image_order',
         ]
         pd.DataFrame(pair_detail_rows)[columns].to_csv(
             output_dir / 'part2_pair_details.csv', index=False

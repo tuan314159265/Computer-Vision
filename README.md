@@ -5,6 +5,8 @@ Project computer vision gồm hai phần:
 1. **Gradient Domain Editing** — ghép đối tượng bằng Poisson blending; so sánh với copy-paste và `cv2.seamlessClone`.
 2. **Panorama stitching** — một pipeline dùng SIFT và ORB: matching, Lowe ratio test, homography với RANSAC, warping và feather blending.
 
+Nếu một cặp ảnh không có đủ inlier để ước lượng homography ổn định, chương trình không tích lũy homography yếu (nguyên nhân gây panorama bị kéo/loe): trước tiên tìm lại thứ tự ảnh theo các vùng chồng lấn đáng tin cậy. Với chuỗi ảnh phẳng được sắp lại, dùng OpenCV SCANS để chọn seam; nếu không tìm được chuỗi đáng tin cậy, dùng OpenCV Stitcher làm fallback. Backend và thứ tự ảnh được ghi trong `part2_experiment_summary.csv`.
+
 Mã chạy local đã được tách thành các module Python trong `lib/`. Notebook gốc trên Colab là tài liệu tham khảo riêng; sửa notebook trên Colab **không tự đồng bộ** với các file Python trong repo.
 
 ## Bắt đầu nhanh
