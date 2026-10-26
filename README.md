@@ -7,7 +7,7 @@ Project computer vision gồm hai phần:
 
 Nếu một cặp ảnh không có đủ inlier để ước lượng homography ổn định, chương trình không tích lũy homography yếu (nguyên nhân gây panorama bị kéo/loe): trước tiên tìm lại thứ tự ảnh theo các vùng chồng lấn đáng tin cậy. Với chuỗi ảnh phẳng được sắp lại, dùng OpenCV SCANS để chọn seam; nếu không tìm được chuỗi đáng tin cậy, dùng OpenCV Stitcher làm fallback. Backend và thứ tự ảnh được ghi trong `part2_experiment_summary.csv`.
 
-Mã chạy local đã được tách thành các module Python trong `lib/`. Notebook gốc trên Colab là tài liệu tham khảo riêng; sửa notebook trên Colab **không tự đồng bộ** với các file Python trong repo.
+Mã chạy local đã được tách thành các module Python trong `lib/`.
 
 ## Bắt đầu nhanh
 
@@ -29,7 +29,7 @@ Có thể đổi thư mục dữ liệu hoặc kết quả:
 python main.py --data-dir data --output-dir outputs
 ```
 
-Không cần Google Colab hay Google Drive để chạy local. Nếu thiếu đầu vào bắt buộc, chương trình tạo ảnh DEMO có nhãn để kiểm tra pipeline; kết quả DEMO không dùng để nộp.
+Chương trình chạy hoàn toàn local, không cần Google Drive. Nếu thiếu đầu vào bắt buộc, chương trình tạo ảnh DEMO có nhãn để kiểm tra pipeline; kết quả DEMO không dùng để nộp.
 
 ## Cấu trúc dữ liệu
 
@@ -90,10 +90,6 @@ lib/
 requirements.txt
 ```
 
-## Chạy trên Google Colab
-
-Notebook `CO3057_BTL2_Gradient_Panorama.ipynb` giữ phiên bản tự chứa để chạy trên Colab. Colab chỉ đọc/ghi notebook và Drive theo cấu hình của notebook; thay đổi ở Colab không tự fetch về repo local. Để đưa thay đổi notebook về đây, tải notebook mới xuống/thay file local hoặc thiết lập đồng bộ Google Drive riêng.
-
 ## Git
 
-Repo công khai: [github.com/tuan314159265/Computer-Vision](https://github.com/tuan314159265/Computer-Vision). Mã nguồn, dữ liệu đầu vào dùng trong bài và các kết quả chính đều được push lên nhánh `master`. Notebook Colab và thư mục `data/test_assets/` vẫn bị ignore.
+Repo công khai: [github.com/tuan314159265/Computer-Vision](https://github.com/tuan314159265/Computer-Vision). Mã nguồn, dữ liệu đầu vào dùng trong bài và các kết quả chính đều được push lên nhánh `master`. Notebook gốc và thư mục `data/test_assets/` vẫn bị ignore.
